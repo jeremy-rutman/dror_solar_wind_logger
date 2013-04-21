@@ -4,8 +4,6 @@ dror alon jwewmy  PV and wind logger and pump/light controller
  
  */
 
-String inputString = "";         // a string to hold incoming data
-boolean stringComplete = false;  // whether the string is complete
 
 //PINS FOR DIGITAL CONTROLS - 2-7 are PWM capable
 int pump1_lowside_pin=2;
@@ -23,6 +21,8 @@ int battery_read_voltage_pin=0;
 int wind_current_read_pin=1;
 int pv_current_read_pin=2;
 int wind_voltage_read_pin=3;
+
+//OTHER CONSTANTS and VARIABLES
 int pump1_on_time=0;
 int pump2_on_time=0;
 int max_pump_on_time=1000*60*10; //10 minutes in mS
@@ -35,6 +35,10 @@ float pv_shunt_voltage=0.0;
 float pv_shunt_current=0.0;
 float R_pv_shunt=0.0;
 float volume_sensor_1_level=0.0;
+String inputString = "";         // a string to hold incoming data
+boolean stringComplete = false;  // whether the string is complete
+
+
 
 enum Commands {
   CMD_READ_BATTERY_VOLTAGE=1,
