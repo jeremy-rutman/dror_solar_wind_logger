@@ -227,19 +227,22 @@ break;
 case  CMD_SET_VOLUME_SENSOR_2_INACTIVE:
 break;
 
-  CMD_READ_VOLUME_SENSOR:
+case  CMD_READ_VOLUME_SENSOR:
   volume_sensor_1_level=analogRead(volume_sensor_1_pin);
   break;
   
-  CMD_LIGHT_1_on:
+case  CMD_LIGHT_1_on:
        digitalWrite(lights_1_24_pin, HIGH);  
 break;
 
-  CMD_LIGHT_2_on,
+case  CMD_LIGHT_2_on,
      digitalWrite(lights_2_12_pin, HIGH);  
 break;
-
-      }
+default:
+         Serial.write("unhandled command");
+break;
+      
+ }
 
       inputString = "";
     }
